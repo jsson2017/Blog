@@ -16,7 +16,6 @@ import com.todo.blog.ui.timeline.PostContentType
 import com.todo.blog.ui.timeline.Timeline
 
 class MainActivity : ComponentActivity() {
-    // Test change for commit check 2
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
