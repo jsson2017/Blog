@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Blog</string>
+    <string name="zack_icon_content_description">Zack from the original Final Fantasy 7</string>
+    <string name="more">more</string>
+    <string name="example_post_content_image_content_description">Drawing of Sonic the Hedgehog and Shadow the Hedgehog baking a pie with Cream the Rabbit and Cheese the Chao.</string>
+    <string name="example_post_content_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Urna et pharetra pharetra massa massa ultricies mi quis. Neque gravida in fermentum et sollicitudin ac. Viverra suspendisse potenti nullam ac tortor vitae. At tellus at urna condimentum mattis. Id interdum velit laoreet id. Augue mauris augue neque gravida in fermentum. Mattis nunc sed blandit libero volutpat sed cras ornare arcu. Netus et malesuada fames ac. Vitae justo eget magna fermentum iaculis eu. At elementum eu facilisis sed odio morbi quis commodo. Quis viverra nibh cras pulvinar mattis nunc. Laoreet id donec ultrices tincidunt arcu non sodales neque sodales. Varius morbi enim nunc faucibus a. A pellentesque sit amet porttitor eget dolor morbi non arcu.</string>
+    <string name="example_post_username">zackfairfan26</string>
+    <string name="example_post_timestamp">April 22, 2021</string>
+</resources>
