@@ -1,30 +1,38 @@
 package com.todo.blog.ui.profile
 
-import androidx.compose.material3.Text
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.dimensionResource
+import com.todo.blog.R
+import com.todo.blog.ui.timeline.Post
+import com.todo.blog.ui.timeline.PostContentType
 
 @Composable
 fun ProfileScreen(
     modifier: Modifier = Modifier
 ) {
-    /*
-    * Profile screen composition:
-    *
-    * Top bar:
-    *   1. User name
-    *   2. Options -> allow user to log out
-    *   3. Edit appearance (do this later)
-    *
-    * Header image:
-    *   1. Use random default image
-    *   2. Profile image
-    *   3. Blog name
-    *   4. Blog subtitle
-    *   5. Posts from this user
-    *
-    * */
-    Text(
-        text = "Placeholder for Profile Screen"
-    )
+    LazyColumn(
+        modifier = modifier.fillMaxSize()
+    ) {
+        item {
+            ProfileUserInfo()
+        }
+        // TODO: Replace with actual data -> make data class + implement database
+        item {
+            Post(
+                postContentType = PostContentType.TEXT,
+                modifier = Modifier.padding(bottom = dimensionResource(id = R.dimen.padding_between_posts))
+            )
+        }
+        item {
+            Post(
+                postContentType = PostContentType.IMAGE,
+                modifier = Modifier.padding(bottom = dimensionResource(id = R.dimen.padding_between_posts))
+            )
+        }
+    }
+
 }

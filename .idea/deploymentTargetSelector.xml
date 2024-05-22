@@ -19,6 +19,9 @@
       <SelectionState runConfigName="mainScreenBottomNav_verifyStartDestination()">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
+      <SelectionState runConfigName="BottomNavBarTest">
+        <option name="selectionMode" value="DROPDOWN" />
+      </SelectionState>
     </selectionStates>
   </component>
 </project>

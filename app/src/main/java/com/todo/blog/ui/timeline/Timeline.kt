@@ -21,6 +21,7 @@ fun Timeline(
         verticalArrangement = Arrangement.Top,
         modifier = modifier.fillMaxSize()
     ) {
+        // TODO: Replace with actual data -> make data class + implement database
         item {
             Post(
                 postContentType = PostContentType.TEXT,
