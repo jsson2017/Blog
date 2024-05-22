@@ -9,7 +9,6 @@ import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
@@ -24,6 +23,8 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.todo.blog.R
+import com.todo.blog.ui.newPost.MakePostScreen
+import com.todo.blog.ui.profile.ProfileScreen
 import com.todo.blog.ui.timeline.Timeline
 
 @Composable
@@ -44,12 +45,10 @@ fun MainScreen(
                 Timeline()
             }
             composable("profile") {
-                /* TODO: Create screen for profile */
-                Text(text = "Profile placeholder")
+                ProfileScreen()
             }
             composable("makePost") {
-                /* TODO: Create screen for making a new post */
-                Text(text = "Make post placeholder")
+                MakePostScreen()
             }
         }
     }
