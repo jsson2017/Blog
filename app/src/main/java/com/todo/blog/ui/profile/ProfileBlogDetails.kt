@@ -2,7 +2,6 @@ package com.todo.blog.ui.profile
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -49,7 +48,6 @@ fun ProfileBlogDetails(
         Box(
             modifier = Modifier
                 .fillMaxHeight()
-                .background(color = Color.White)
         ) {
             Image(
                 painter = painterResource(R.drawable.blog_details_example_image),
