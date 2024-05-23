@@ -48,7 +48,11 @@ fun MainScreen(
                 ProfileScreen()
             }
             composable("makePost") {
-                MakePostScreen()
+                MakePostScreen(
+                    closeButtonOnClick = {
+                        navController.popBackStack()
+                    }
+                )
             }
         }
     }

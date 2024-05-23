@@ -18,6 +18,7 @@ import com.todo.blog.ui.theme.BlogTheme
 
 @Composable
 fun MakePostHeader(
+    closeButtonOnClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     Row(
@@ -30,7 +31,7 @@ fun MakePostHeader(
             modifier = Modifier.weight(1.0f)
         ) {
             IconButton(
-                onClick = { /*TODO*/ },
+                onClick = closeButtonOnClick,
             ) {
                 Icon(
                     painter = painterResource(R.drawable.baseline_close_24),
@@ -64,6 +65,8 @@ fun MakePostHeader(
 @Composable
 fun PreviewMakePostHeader() {
     BlogTheme {
-        MakePostHeader()
+        MakePostHeader(
+            closeButtonOnClick = {}
+        )
     }
 }

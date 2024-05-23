@@ -12,6 +12,7 @@ import com.todo.blog.ui.theme.BlogTheme
 
 @Composable
 fun MakePostScreen(
+    closeButtonOnClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     Column(
@@ -19,6 +20,7 @@ fun MakePostScreen(
             .fillMaxSize()
     ) {
         MakePostHeader(
+            closeButtonOnClick = closeButtonOnClick,
             modifier = Modifier.padding(
                 start = dimensionResource(id = R.dimen.make_post_general_padding),
                 top = dimensionResource(id = R.dimen.make_post_general_padding),
@@ -45,6 +47,8 @@ fun MakePostScreen(
 @Composable
 fun PreviewMakePostScreen() {
     BlogTheme(darkTheme = true) {
-        MakePostScreen()
+        MakePostScreen(
+            closeButtonOnClick = {}
+        )
     }
 }
