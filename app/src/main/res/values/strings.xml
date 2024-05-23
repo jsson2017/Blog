@@ -14,4 +14,9 @@
     <string name="example_blog_title">Raining in Midgar</string>
     <string name="example_blog_description">First class soldier, first class bestieeeeee</string>
     <string name="button_action_settings">go to settings</string>
+    <string name="button_action_close">close</string>
+    <string name="button_label_post">Post</string>
+    <string name="make_post_content_hint">Add something, if you\'d like</string>
+    <string name="make_post_tag_hint"># Add tags to help people find your post</string>
+    <string name="button_action_add_tag">Add tag</string>
 </resources>

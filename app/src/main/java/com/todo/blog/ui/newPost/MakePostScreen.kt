@@ -1,35 +1,50 @@
 package com.todo.blog.ui.newPost
 
-import androidx.compose.material3.Text
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.dimensionResource
+import androidx.compose.ui.tooling.preview.Preview
+import com.todo.blog.R
+import com.todo.blog.ui.theme.BlogTheme
 
 @Composable
 fun MakePostScreen(
     modifier: Modifier = Modifier
 ) {
-    /*
-    * Make post screen composition:
-    *
-    * Top bar:
-    *   1. X button to close
-    *   2. Post button to post
-    *   3. Post options (let's leave this out for now)
-    *
-    * User Info:
-    *   1. User icon in circle
-    *   2. User name
-    *
-    * Post Content: might need to play around with this.
-    *   1. Text box user can type in
-    *   2. Let user pick images from their library
-    *   3. Give app permission to open camera (maybe save for later)
-    *
-    * Tags:
-    *   1. Big button informing user to add tags - pressing this opens a bottom drawer
-    *
-    * */
-    Text(
-        text = "Placeholder for New Post Screen"
-    )
+    Column(
+        modifier = modifier
+            .fillMaxSize()
+    ) {
+        MakePostHeader(
+            modifier = Modifier.padding(
+                start = dimensionResource(id = R.dimen.make_post_general_padding),
+                top = dimensionResource(id = R.dimen.make_post_general_padding),
+                end = dimensionResource(id = R.dimen.make_post_general_padding),
+            )
+        )
+        MakePostUserInfo(
+            modifier = Modifier.padding(
+                horizontal = dimensionResource(id = R.dimen.make_post_general_padding),
+            )
+        )
+        MakePostContent(
+            modifier = Modifier.weight(1.0f)
+        )
+        MakePostTags(
+            modifier = Modifier.padding(
+                horizontal = dimensionResource(id = R.dimen.make_post_general_padding)
+            )
+        )
+    }
+}
+
+@Preview
+@Composable
+fun PreviewMakePostScreen() {
+    BlogTheme(darkTheme = true) {
+        MakePostScreen()
+    }
 }

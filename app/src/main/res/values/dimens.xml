@@ -9,4 +9,7 @@
     <dimen name="padding_between_posts">8dp</dimen>
     <dimen name="profile_user_icon_size">72dp</dimen>
     <dimen name="profile_user_icon_border">2dp</dimen>
+    <dimen name="user_icon_padding">4dp</dimen>
+    <dimen name="make_post_username_padding">8dp</dimen>
+    <dimen name="make_post_general_padding">8dp</dimen>
 </resources>
