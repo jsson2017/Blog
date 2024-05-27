@@ -19,14 +19,13 @@ import com.todo.blog.ui.theme.BlogTheme
 
 @Composable
 fun MakePostContent(
+    newPostText: String,
+    onUpdateNewPostText: (String) -> Unit,
     modifier: Modifier = Modifier
 ) {
-    // TODO: Replace with viewmodel
-    var text by remember { mutableStateOf("") }
-
     TextField(
-        value = text,
-        onValueChange = { text = it },
+        value = newPostText,
+        onValueChange = { onUpdateNewPostText(it) },
         placeholder = {
             Text(
                 text = stringResource(R.string.make_post_content_hint)
@@ -49,6 +48,9 @@ fun MakePostContent(
 @Composable
 fun PreviewMakePostContent() {
     BlogTheme {
-        MakePostContent()
+        MakePostContent(
+            newPostText = "test text",
+            onUpdateNewPostText = {}
+        )
     }
 }
