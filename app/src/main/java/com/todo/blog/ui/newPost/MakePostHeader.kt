@@ -19,6 +19,7 @@ import com.todo.blog.ui.theme.BlogTheme
 @Composable
 fun MakePostHeader(
     closeButtonOnClick: () -> Unit,
+    onClickPublishPost: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     Row(
@@ -42,7 +43,10 @@ fun MakePostHeader(
 
         // Post Button
         Button(
-            onClick = { /*TODO*/ }
+            onClick = {
+                onClickPublishPost()
+                closeButtonOnClick()
+            }
         ) {
             Text(
                 text = stringResource(R.string.button_label_post)
@@ -66,7 +70,8 @@ fun MakePostHeader(
 fun PreviewMakePostHeader() {
     BlogTheme {
         MakePostHeader(
-            closeButtonOnClick = {}
+            closeButtonOnClick = {},
+            onClickPublishPost = {}
         )
     }
 }

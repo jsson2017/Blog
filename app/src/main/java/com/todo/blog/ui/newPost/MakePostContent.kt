@@ -6,10 +6,6 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
@@ -21,11 +17,15 @@ import com.todo.blog.ui.theme.BlogTheme
 fun MakePostContent(
     newPostText: String,
     onUpdateNewPostText: (String) -> Unit,
+    onUpdateNewPostUiState: (String) -> Unit,
     modifier: Modifier = Modifier
 ) {
     TextField(
         value = newPostText,
-        onValueChange = { onUpdateNewPostText(it) },
+        onValueChange = {
+            onUpdateNewPostText(it)
+            onUpdateNewPostUiState(it)
+        },
         placeholder = {
             Text(
                 text = stringResource(R.string.make_post_content_hint)
@@ -50,7 +50,8 @@ fun PreviewMakePostContent() {
     BlogTheme {
         MakePostContent(
             newPostText = "test text",
-            onUpdateNewPostText = {}
+            onUpdateNewPostText = {},
+            onUpdateNewPostUiState = {}
         )
     }
 }

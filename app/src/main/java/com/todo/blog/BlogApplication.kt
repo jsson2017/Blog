@@ -1,4 +1,4 @@
-package com.todo.blog.ui
+package com.todo.blog
 
 import android.app.Application
 import com.todo.blog.data.AppContainer
