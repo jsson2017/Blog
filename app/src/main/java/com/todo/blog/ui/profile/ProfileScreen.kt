@@ -4,13 +4,14 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.dimensionResource
 import com.todo.blog.R
+import com.todo.blog.data.timeline.examplePosts
 import com.todo.blog.ui.timeline.Post
-import com.todo.blog.ui.timeline.PostContentType
 
 @Composable
 fun ProfileScreen(
@@ -25,16 +26,10 @@ fun ProfileScreen(
             ProfileUserInfo()
         }
         // TODO: Replace with actual data -> make data class + implement database
-        item {
+        items(examplePosts) { post ->
             Post(
-                postContentType = PostContentType.TEXT,
-                modifier = Modifier.padding(bottom = dimensionResource(id = R.dimen.padding_between_posts))
-            )
-        }
-        item {
-            Post(
-                postContentType = PostContentType.IMAGE,
-                modifier = Modifier.padding(bottom = dimensionResource(id = R.dimen.padding_between_posts))
+                post = post,
+                modifier = Modifier.padding(bottom = dimensionResource(R.dimen.post_padding_vertical))
             )
         }
     }

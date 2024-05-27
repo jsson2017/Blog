@@ -9,7 +9,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.todo.blog.ui.base.MainScreen
 import com.todo.blog.ui.theme.BlogTheme
 import com.todo.blog.ui.timeline.Post
-import com.todo.blog.ui.timeline.PostContentType
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,8 +24,8 @@ class MainActivity : ComponentActivity() {
 
 @Preview(showBackground = true)
 @Composable
-fun GreetingPreview() {
+fun PreviewMainScreen() {
     BlogTheme {
-        Post(postContentType = PostContentType.TEXT)
+        MainScreen()
     }
 }

@@ -12,20 +12,18 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.todo.blog.R
+import com.todo.blog.data.timeline.PostContentType
 import com.todo.blog.ui.theme.BlogTheme
-
-enum class PostContentType {
-    TEXT,
-    IMAGE
-}
 
 @Composable
 fun PostContent(
     postContentType: PostContentType,
+    postContent: String,
     modifier: Modifier = Modifier
 ) {
     if (postContentType == PostContentType.TEXT) {
         PostContentText(
+            postText = postContent,
             modifier = modifier
                 .fillMaxWidth()
                 .padding(
@@ -43,17 +41,19 @@ fun PostContent(
 
 @Composable
 fun PostContentText(
+    postText: String,
     modifier: Modifier = Modifier
 ) {
     Text(
-        text = stringResource(id = R.string.example_post_content_text),
+        text = postText,
         modifier = modifier
     )
 }
 
 @Composable
 fun PostContentImage(
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    imageURL: String = "", /* TODO: Use URL to grab image */
 ) {
    Image(
        painter = painterResource(id = R.drawable.example_post_content_image),
@@ -68,7 +68,8 @@ fun PostContentImage(
 fun PreviewPostContentText() {
     BlogTheme() {
         PostContent(
-            postContentType = PostContentType.TEXT
+            postContentType = PostContentType.TEXT,
+            postContent = stringResource(id = R.string.example_post_content_text)
         )
     }
 }
@@ -78,7 +79,8 @@ fun PreviewPostContentText() {
 fun PreviewPostContentImage() {
     BlogTheme() {
         PostContent(
-            postContentType = PostContentType.IMAGE
+            postContentType = PostContentType.IMAGE,
+            postContent = ""
         )
     }
 }

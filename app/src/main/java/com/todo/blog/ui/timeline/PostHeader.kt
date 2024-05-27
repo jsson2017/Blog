@@ -26,6 +26,8 @@ import com.todo.blog.ui.theme.BlogTheme
 
 @Composable
 fun PostHeader(
+    username: String,
+    timestamp: String,
     modifier: Modifier = Modifier
 ) {
     Row(
@@ -38,7 +40,10 @@ fun PostHeader(
             )
             .fillMaxWidth()
     ) {
-        PostHeaderUser()
+        PostHeaderUser(
+            username = username,
+            timestamp = timestamp
+        )
         IconButton(onClick = { /*TODO*/ }) {
             Icon(
                 painter = painterResource(R.drawable.baseline_more_horiz_24),
@@ -51,6 +56,8 @@ fun PostHeader(
 
 @Composable
 fun PostHeaderUser(
+    username: String,
+    timestamp: String,
     modifier: Modifier = Modifier
 ) {
     Row(
@@ -67,6 +74,8 @@ fun PostHeaderUser(
                 .clip(RoundedCornerShape(dimensionResource(id = R.dimen.post_user_icon_corner_size)))
         )
         PostHeaderUsername(
+            username = username,
+            timestamp = timestamp,
             modifier = Modifier.padding(start = dimensionResource(id = R.dimen.post_header_padding))
         )
     }
@@ -74,17 +83,19 @@ fun PostHeaderUser(
 
 @Composable
 fun PostHeaderUsername(
+    username: String,
+    timestamp: String,
     modifier: Modifier = Modifier
 ) {
     Column(
         modifier = modifier
     ) {
         Text(
-            text = stringResource(R.string.example_post_username),
+            text = username,
             fontWeight = FontWeight.Bold,
         )
         Text(
-            text = stringResource(R.string.example_post_timestamp),
+            text = timestamp,
         )
     }
 }
@@ -93,7 +104,10 @@ fun PostHeaderUsername(
 @Composable
 fun PreviewPostHeader() {
     BlogTheme(darkTheme = false) {
-        PostHeader()
+        PostHeader(
+            username = stringResource(R.string.example_post_username),
+            timestamp = stringResource(R.string.example_post_timestamp)
+        )
     }
 }
 
@@ -101,6 +115,9 @@ fun PreviewPostHeader() {
 @Composable
 fun PreviewPostHeaderDark() {
     BlogTheme(darkTheme = true) {
-        PostHeader()
+        PostHeader(
+            username = stringResource(R.string.example_post_username),
+            timestamp = stringResource(R.string.example_post_timestamp)
+        )
     }
 }

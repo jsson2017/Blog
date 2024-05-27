@@ -19,6 +19,7 @@ import com.todo.blog.ui.theme.BlogTheme
 
 @Composable
 fun PostFooter(
+    noteCount: Int,
     modifier: Modifier = Modifier
 ) {
     Row(
@@ -33,7 +34,7 @@ fun PostFooter(
     ) {
         OutlinedButton(onClick = { /*TODO*/ }) {
             Text(
-                text = "12,385 notes"
+                text = "$noteCount notes"
             )
         }
         PostFooterIcons()
@@ -84,6 +85,8 @@ fun PostFooterIcons(
 @Composable
 fun PreviewPostFooter() {
     BlogTheme {
-        PostFooter()
+        PostFooter(
+            noteCount = 12385
+        )
     }
 }

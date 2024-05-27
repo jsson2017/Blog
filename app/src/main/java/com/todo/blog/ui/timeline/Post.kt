@@ -6,24 +6,39 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import com.todo.blog.R
+import com.todo.blog.data.timeline.Post
+import com.todo.blog.data.timeline.PostContent
+import com.todo.blog.data.timeline.exampleTextPost
 import com.todo.blog.ui.theme.BlogTheme
 
 @Composable
 fun Post(
-    postContentType: PostContentType,
+    post: Post,
     modifier: Modifier = Modifier
 ) {
+    val postContents: List<PostContent> = post.contentList
+
     Column(
         modifier = modifier
             .fillMaxWidth()
             .background(MaterialTheme.colorScheme.background)
     ) {
-        PostHeader()
-        PostContent(
-            postContentType = postContentType
+        PostHeader(
+            username = stringResource(R.string.example_post_username),
+            timestamp = post.timestamp,
         )
-        PostFooter()
+        for (postContent in postContents) {
+            PostContent(
+                postContentType = postContent.contentType,
+                postContent = postContent.content
+            )
+        }
+        PostFooter(
+            noteCount = post.noteCount
+        )
     }
 }
 
@@ -32,6 +47,8 @@ fun Post(
 @Composable
 fun PreviewPost() {
     BlogTheme {
-        Post(postContentType = PostContentType.TEXT)
+        Post(
+            post = exampleTextPost
+        )
     }
 }
