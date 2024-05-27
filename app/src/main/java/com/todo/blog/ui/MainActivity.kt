@@ -1,4 +1,4 @@
-package com.todo.blog
+package com.todo.blog.ui
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
