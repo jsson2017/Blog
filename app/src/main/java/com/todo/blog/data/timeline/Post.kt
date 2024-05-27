@@ -1,7 +1,12 @@
 package com.todo.blog.data.timeline
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(tableName = "posts")
 data class Post(
-    val id: Int,
+    @PrimaryKey(autoGenerate = true)
+    val id: Int = 0,
     val userId: Int,
     val timestamp: String,
     val noteCount: Int,
