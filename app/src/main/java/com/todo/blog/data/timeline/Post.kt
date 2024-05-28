@@ -10,7 +10,8 @@ data class Post(
     val userId: Int,
     val timestamp: String,
     val noteCount: Int,
-    val contentList: List<PostContent>
+    val contentList: List<PostContent>,
+    val hashtags: List<String>
 )
 
 val exampleTextPost = Post(
@@ -23,7 +24,8 @@ val exampleTextPost = Post(
             contentType = PostContentType.TEXT,
             content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Urna et pharetra pharetra massa massa ultricies mi quis. Neque gravida in fermentum et sollicitudin ac. Viverra suspendisse potenti nullam ac tortor vitae. At tellus at urna condimentum mattis. Id interdum velit laoreet id. Augue mauris augue neque gravida in fermentum. Mattis nunc sed blandit libero volutpat sed cras ornare arcu. Netus et malesuada fames ac. Vitae justo eget magna fermentum iaculis eu. At elementum eu facilisis sed odio morbi quis commodo. Quis viverra nibh cras pulvinar mattis nunc. Laoreet id donec ultrices tincidunt arcu non sodales neque sodales. Varius morbi enim nunc faucibus a. A pellentesque sit amet porttitor eget dolor morbi non arcu."
         ),
-    )
+    ),
+    hashtags = listOf("exampleTag", "exampleTag2")
 )
 
 val exampleImagePost = Post(
@@ -36,7 +38,8 @@ val exampleImagePost = Post(
             contentType = PostContentType.IMAGE,
             content = "https://hips.hearstapps.com/hmg-prod/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg"
         )
-    )
+    ),
+    hashtags = listOf("exampleTag", "exampleTag2")
 )
 
 val exampleMultipleContentTypePost = Post(
@@ -53,7 +56,8 @@ val exampleMultipleContentTypePost = Post(
             contentType = PostContentType.IMAGE,
             content = "https://hips.hearstapps.com/hmg-prod/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg"
         )
-    )
+    ),
+    hashtags = listOf("exampleTag", "exampleTag2")
 )
 
 val examplePosts : List<Post> = listOf<Post>(exampleTextPost, exampleImagePost, exampleMultipleContentTypePost)

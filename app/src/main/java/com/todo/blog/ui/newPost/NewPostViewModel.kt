@@ -71,7 +71,8 @@ class NewPostViewModel(
                         contentType = PostContentType.TEXT,
                         content = newPostText
                     )
-                )
+                ),
+                hashtags = emptyList()
             )
         )
     }
@@ -80,8 +81,9 @@ class NewPostViewModel(
 data class NewPostUiState(
     val id: Int = 0,
     val userId: Int = 0,
-    val contentList: List<PostContent> = emptyList(),
     val timestamp: String = "",
     val noteCount: Int = 0,
+    val contentList: List<PostContent> = emptyList(),
+    val hashtags: List<String> = emptyList(),
     val isValid: Boolean = false
 )
