@@ -5,6 +5,7 @@ import androidx.lifecycle.viewmodel.CreationExtras
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import com.todo.blog.BlogApplication
+import com.todo.blog.ui.base.MainViewModel
 import com.todo.blog.ui.newPost.NewPostViewModel
 
 object AppViewModelProvider {
@@ -13,6 +14,9 @@ object AppViewModelProvider {
             NewPostViewModel(
                 blogApplication().container.postRepository
             )
+        }
+        initializer {
+            MainViewModel()
         }
     }
 }
